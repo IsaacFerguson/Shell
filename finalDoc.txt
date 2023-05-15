@@ -1,0 +1,34 @@
+My program does not fully work so I am going to talk about why i think they are 
+not working and how I tested them. 
+
+Piping is the first problem. I think my idea
+for how to pipe the IO makes sense but in pratice the first program I run errors
+when reading the next token after the first arg. I think the problem is coming from 
+how I call the funcs to run. 
+
+The two bulitin commands that gave me issue are cd and dir. The problem I had with dir 
+that it could never find the dir I wanted it to look at. cd just did not work. My guess
+for both cd and dir is that i do not really understand how chrdir and opendir work.
+
+Echo is also problematic. it works the first time you use it but after that it 
+no loger just prints whats after echo and reapeats the whole line.
+
+these are some of the commands I used for testing:
+
+ls > output.txt
+ls >> output.txt
+wc < input.txt
+wc < input.txt > output.txt
+wc < input.txt >> output.txt
+echo Hello | wc
+vim &
+ls
+ls | wc
+./test2 | ./test3
+ls -la | wc
+ping -c 2 google.com &
+./test2
+ls -la > lsOutput.txt
+wc < lsOutput.txt
+
+not all worked when testing just a list of some that I tried.
